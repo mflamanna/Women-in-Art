@@ -52,12 +52,6 @@ $mysqli->close();
     <a href="./">
       <span class="fontdancing text-6xl tracking-tight">Women in Art</span>
     </>
-  </div>
-  <div class="block lg:hidden">
-    <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-      <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-    </button>
-  </div>
   <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
     <div class="ml-8 fontmanrope lg:flex-grow">
       <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-[#fddfe1] hover:text-white mr-4">
@@ -91,7 +85,8 @@ $mysqli->close();
 </header>
 
   <body>
-  <div class="min-w-screen min-h-screen bg-[#eae9f7] flex items-center p-5 lg:p-10 overflow-hidden relative">
+  <div class="min-w-screen min-h-screen bg-[#eae9f7] p-5 lg:p-10 overflow-hidden relative">
+
                 <?php
                  if(!$art_details)
                  {
@@ -102,8 +97,7 @@ $mysqli->close();
                     {
                         ?>
                         
-                        <div class="min-w-screen min-h-screen bg-[#eae9f7] p-5 lg:p-10 overflow-hidden relative">
-                        <div class="w-full max-w-6xl rounded bg-white shadow-xl p-10 lg:p-20 mx-auto text-gray-800 relative md:text-left">
+                        <div class="mb-5 w-full max-w-6xl rounded bg-white shadow-xl p-10 lg:p-20 mx-auto text-gray-800 relative md:text-left">
                             <div class="md:flex items-center -mx-10">
                                 <div class="w-full md:w-1/2 px-10 mb-10 md:mb-0">
                                     <div class="relative">
@@ -129,6 +123,15 @@ $mysqli->close();
                                         <p class="m-1">
                                           <a href="https://creativecommons.org/licenses/by/4.0/">(CC)</a>
                                         </p>
+                               
+                                        </div>
+                                        <div class="flex">
+                                        <a class="flex items-center flex-wrap" href="./edit.php?id=<?php echo $value['id']?>">
+                                          <button class="my-4 mr-4 bg-gradient-to-r from-[#fddfe1] to-[#f34a47] hover:scale-105 drop-shadow-md  shadow-cla-blue px-4 py-1 rounded-lg text-[#3829a6] font-bold">Edit</button>
+                                        </a>
+                                        <a class="flex items-center flex-wrap" href="./delete.php?delete=<?php echo $value['id']?>">
+                                          <button class="my-4 bg-gradient-to-r from-[#fddfe1] to-[#f34a47] hover:scale-105 drop-shadow-md  shadow-cla-blue px-4 py-1 rounded-lg text-[#3829a6] font-bold">Delete</button>
+                                        </a>
                                         </div>
                                     </div>
                                     <div>
