@@ -6,7 +6,7 @@ $sql = "SELECT * FROM worksofart";
 $result = $mysqli->query($sql);
 
 
-include 'connect_test_db.php';
+include './services/connect_test_db.php';
 $searchErr = '';
 $art_details='';
 if(isset($_POST['search']))
