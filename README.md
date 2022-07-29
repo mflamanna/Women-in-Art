@@ -44,9 +44,9 @@ Mi intención es que cuando se piense en arte no sólo aparezcan en nuestra ment
 <!-- TechStack -->
 ### 👾 Tech Stack
 
-- PHP
-- MySQL
-- Tailwind
+- PHP (7.4)
+- MySQL (8.0)
+- Tailwind (3.1.6)
 
 <!-- Features -->
 ### 🎯 Features
@@ -75,8 +75,10 @@ Mi intención es que cuando se piense en arte no sólo aparezcan en nuestra ment
 <!-- Installation -->
 ### ⚙️ Installation
 
-Crea una carpeta en tu directorio xampp/htdocs, donde clonarás el repositorio.
+-Crea una carpeta en tu directorio xampp/htdocs, donde clonarás el repositorio.
 En XAMPP inicia Apache y MySQL
+
+-Importa la base de datos
 
 
 <!-- Run Locally -->
