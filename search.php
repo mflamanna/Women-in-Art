@@ -46,12 +46,15 @@ $mysqli->close();
 
   <body>
     
-<header>
+  <header>
+
+ 
 <nav class="flex items-center justify-between flex-wrap bg-[#f34a47] p-6">
   <div class="flex items-center flex-shrink-0 text-white mr-6">
-    <a href="./">
-      <span class="fontdancing text-6xl tracking-tight">Women in Art</span>
-    </>
+  <a href="./">
+    <span class="fontdancing text-6xl tracking-tight">Women in Art</span>
+  </>
+  </div>
   <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
     <div class="ml-8 fontmanrope lg:flex-grow">
       <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-[#fddfe1] hover:text-white mr-4">
@@ -61,7 +64,7 @@ $mysqli->close();
         Upload Artwork
       </a>
       <a href="./contact.php" class="block mt-4 lg:inline-block lg:mt-0 text-[#fddfe1] hover:text-white">
-        Contacto
+        Contact
       </a>
     </div>
   </div>
@@ -70,9 +73,9 @@ $mysqli->close();
 
 
       <form action="search.php" method="post" class="relative mx-auto w-max">
-        <input type="search" 
-              class="peer cursor-pointer relative z-10 h-10 w-12 rounded-full border bg-transparent pl-12 outline-none focus:w-full focus:cursor-text focus:border-[#3829a6] focus:pl-16 focus:pr-4"
-              name= "search"/>
+        <input type="text" 
+              name = "search"
+              class="peer cursor-pointer relative z-10 h-10 w-12 rounded-full border bg-transparent pl-12 outline-none focus:w-full focus:cursor-text focus:border-[#3829a6] focus:pl-16 focus:pr-4"/>
         <svg xmlns="http://www.w3.org/2000/svg" class="absolute inset-y-0 my-auto h-8 w-12 border-r border-transparent stroke-gray-500 px-3.5 peer-focus:border-[#3829a6] peer-focus:stroke-[#3829a6]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
@@ -82,6 +85,7 @@ $mysqli->close();
     </div>
   </div>
 </nav>
+
 </header>
 
   <body>
