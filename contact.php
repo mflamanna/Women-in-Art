@@ -1,6 +1,6 @@
 <?php 
 include './services/connection.php';
- 
+ /* 
 if(isset($_POST['submit'])) {
  $mailto = "lamanna.mflorencia@gmail.com";  //My email address
  //getting customer data
@@ -37,7 +37,7 @@ if(isset($_POST['submit'])) {
     $failed = "Sorry! Message was not sent, Try again Later.";
   }
  
-}
+} */
  
 ?>
 
@@ -52,7 +52,7 @@ if(isset($_POST['submit'])) {
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.98.0">
-    <title>Women in Art</title>
+    <title>Women in Art - Contact</title>
     <link rel="stylesheet" href="output.css">
     
     
@@ -87,7 +87,7 @@ if(isset($_POST['submit'])) {
       </a>
     </div>
   </div>
-  <div class="relative rounded-2xl bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:px-10">
+  <div class="relative rounded-2xl bg-white px-4 pt-5 pb-4 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:px-10">
     <div class="mx-auto max-w-md">
 
 

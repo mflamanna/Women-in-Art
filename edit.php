@@ -8,7 +8,6 @@ $resultado = $mysqli->query($sql);
 }
 
 if(isset($_POST['name'])){
-  echo 'hola';
     $id = $_POST['id'];
     $name= $_POST['name'];
     $artist= $_POST['artist'];
@@ -17,9 +16,11 @@ if(isset($_POST['name'])){
     $location= $_POST['location'];
     $description= $_POST['description'];
     $img= $_POST['img'];
+    $rights= $_POST['rights'];
+    $author= $_POST['author'];
 
 
-    $sqledit= "UPDATE worksofart SET name='$name', artist='$artist', year='$year', technique='$technique', location='$location', description='$description', img='$img' WHERE id=$id";
+    $sqledit= "UPDATE worksofart SET name='$name', artist='$artist', year='$year', technique='$technique', location='$location', description='$description', img='$img', rights='$rights', author='$author' WHERE id=$id";
     
     if ($mysqli->query($sqledit) === TRUE) {
       echo "Record updated successfully";
@@ -45,7 +46,7 @@ if(isset($_POST['name'])){
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.98.0">
-    <title>Women in Art</title>
+    <title>Women in Art - Edit</title>
     <link rel="stylesheet" href="output.css">
     
     
@@ -85,7 +86,7 @@ if(isset($_POST['name'])){
       </a>
     </div>
   </div>
-  <div class="relative rounded-2xl bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:px-10">
+  <div class="relative rounded-2xl bg-white px-4 pt-5 pb-4 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:px-10">
     <div class="mx-auto max-w-md">
 
 
@@ -168,6 +169,20 @@ if(isset($_POST['name'])){
             class="border-2 rounded-lg w-full h-12 px-4 my-3"
             name= "img"
             value= "<?php echo $row['img'] ?>"
+          />
+          <input
+            type="text"
+            placeholder="Rights"
+            class="border-2 rounded-lg w-full h-12 px-4 my-3"
+            name= "rights"
+            value= "<?php echo $row['rights'] ?>"
+          />
+          <input
+            type="text"
+            placeholder="Author"
+            class="border-2 rounded-lg w-full h-12 px-4 my-3"
+            name= "author"
+            value= "<?php echo $row['author'] ?>"
           />
           <button
             class="bg-red-400 text-white rounded-md hover:bg-red-500 font-semibold px-4 py-3 w-full"

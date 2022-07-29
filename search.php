@@ -14,7 +14,7 @@ if(isset($_POST['search']))
     if(!empty($_POST['search']))
     {
         $search = $_POST['search'];
-        $stmt = $con->prepare("SELECT * from worksofart WHERE name like '%$search%' or artist like '%$search%'");
+        $stmt = $con->prepare("SELECT * from worksofart WHERE name like '%$search%' or artist like '%$search%' or location like '%$search%'");
         $stmt->execute();
         $art_details = $stmt->fetchAll(PDO::FETCH_ASSOC);
         //print_r($art_details);
@@ -39,7 +39,7 @@ $mysqli->close();
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.98.0">
-    <title>PHP Library</title>
+    <title>Women in Art - Search results</title>
     <link rel="stylesheet" href="output.css">
     
   </head>
@@ -71,7 +71,7 @@ $mysqli->close();
       </a>
     </div>
   </div>
-  <div class="relative z-10 h-10 w-12 rounded-full bg-white">
+  <div class="relative rounded-2xl bg-white px-4 pt-5 pb-4 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:px-10">
     <div class="mx-auto max-w-md">
 
 
@@ -91,6 +91,7 @@ $mysqli->close();
 </header>
 
   <body>
+  <div class="min-w-screen min-h-screen bg-[#eae9f7] flex items-center p-5 lg:p-10 overflow-hidden relative">
                 <?php
                  if(!$art_details)
                  {
@@ -110,13 +111,25 @@ $mysqli->close();
                                     </div>
                                 </div>
                                 <div class="w-full md:w-1/2 px-10">
-                                    <div class="mb-10">
-                                        <h1 class="font-bold uppercase text-2xl mb-5"><?php echo $value['name'];?></h1>
-                                        <h2 class="font-bold uppercase text-1xl mb-5"><?php echo $value['artist'];?></h2>
+                                    <div class="fontmanrope mb-10">
+                                        <h1 class="font-bold text-3xl mb-5"><?php echo $value['name'];?></h1>
+                                        <h2 class="font-bold text-1xl mb-5"><?php echo $value['artist'];?></h2>
                                         <p class="text-sm"><?php echo $value['year'];?></p>
                                         <p class="text-sm"><?php echo $value['location'];?></p>
                                         <p class="text-sm"><?php echo $value['technique'];?></p>
+                                        <br>
                                         <p class="text-sm"><?php echo $value['description'];?></p>
+                                        <br>
+                                        <div class="flex">
+                                        <cite class="m-1">
+                                          <p>Escrito por:
+                                          <a class="font-bold" href=<?php echo $value['rights'] ?>> <?php echo $value['author'] ?></a>
+                                          </p>
+                                        </cite>
+                                        <p class="m-1">
+                                          <a href="https://creativecommons.org/licenses/by/4.0/">(CC)</a>
+                                        </p>
+                                        </div>
                                     </div>
                                     <div>
                     </div>

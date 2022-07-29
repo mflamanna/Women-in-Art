@@ -16,7 +16,7 @@ $resultado = $mysqli->query($sql);
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.98.0">
-    <title>PHP Library</title>
+    <title>Women in Art - Details</title>
     <link rel="stylesheet" href="output.css">
     
   </head>
@@ -48,7 +48,7 @@ $resultado = $mysqli->query($sql);
       </a>
     </div>
   </div>
-  <div class="relative rounded-2xl bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:px-10">
+  <div class="relative rounded-2xl bg-white px-4 pt-5 pb-4 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:px-10">
     <div class="mx-auto max-w-md">
 
 
@@ -68,8 +68,8 @@ $resultado = $mysqli->query($sql);
 </header>
 
 <main>
-<?php while($row = $resultado->fetch_assoc()){ ?>
 <div class="min-w-screen min-h-screen bg-[#eae9f7] flex items-center p-5 lg:p-10 overflow-hidden relative">
+<?php while($row = $resultado->fetch_assoc()){ ?>
     <div class="w-full max-w-6xl rounded bg-white shadow-xl p-10 lg:p-20 mx-auto text-gray-800 relative md:text-left">
         <div class="md:flex items-center -mx-10">
             <div class="w-full md:w-1/2 px-10 mb-10 md:mb-0">
@@ -87,6 +87,25 @@ $resultado = $mysqli->query($sql);
                     <p class="text-sm"><?php echo $row['technique'] ?></p>
                     <br>
                     <p class="text-sm"><?php echo $row['description'] ?></p>
+                    <br>
+                    <div class="flex">
+                    <cite class="m-1">
+                      <p>Escrito por:
+                      <a class="font-bold" href=<?php echo $row['rights'] ?>> <?php echo $row['author'] ?></a>
+                      </p>
+                    </cite>
+                    <p class="m-1">
+                      <a href="https://creativecommons.org/licenses/by/4.0/">(CC)</a>
+                    </p>
+                    </div>
+                    <div class="flex">
+                    <a class="flex items-center flex-wrap" href="./edit.php?id=<?php echo $row['id']?>">
+                      <button class="my-4 mr-4 bg-gradient-to-r from-[#fddfe1] to-[#f34a47] hover:scale-105 drop-shadow-md  shadow-cla-blue px-4 py-1 rounded-lg text-[#3829a6] font-bold">Edit</button>
+                    </a>
+                    <a class="flex items-center flex-wrap" href="./delete.php?delete=<?php echo $row['id']?>">
+                      <button class="my-4 bg-gradient-to-r from-[#fddfe1] to-[#f34a47] hover:scale-105 drop-shadow-md  shadow-cla-blue px-4 py-1 rounded-lg text-[#3829a6] font-bold">Delete</button>
+                    </a>
+                    </div>
                 </div>
                 <div>
                 <?php }?>

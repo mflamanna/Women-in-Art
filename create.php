@@ -11,9 +11,11 @@
  $location= $_POST['location'];
  $description= $_POST['description'];
  $img= $_POST['img'];
+ $rights= $_POST['rights'];
+ $author= $_POST['author'];
  
 
- $sql = "INSERT INTO worksofart (name, artist, year, technique, location, description, img) VALUES ('$name', '$artist', '$year', '$technique', '$location', '$description', '$img')";
+ $sql = "INSERT INTO worksofart (name, artist, year, technique, location, description, img, rights, author) VALUES ('$name', '$artist', '$year', '$technique', '$location', '$description', '$img', '$rights', '$author')";
 
 $result = $mysqli->query($sql);
 
@@ -36,7 +38,7 @@ $mysqli->close();
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.98.0">
-    <title>Women in Art</title>
+    <title>Women in Art - Create</title>
     <link rel="stylesheet" href="output.css">
     
     
@@ -76,7 +78,7 @@ $mysqli->close();
       </a>
     </div>
   </div>
-  <div class="relative rounded-2xl bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:px-10">
+  <div class="relative rounded-2xl bg-white px-4 pt-5 pb-4 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:px-10">
     <div class="mx-auto max-w-md">
 
 
@@ -144,6 +146,18 @@ $mysqli->close();
             placeholder="Image URL"
             class="border-2 rounded-lg w-full h-12 px-4 my-3"
             name= "img"
+          />
+          <input
+            type="text"
+            placeholder="Rights"
+            class="border-2 rounded-lg w-full h-12 px-4 my-3"
+            name= "rights"
+          />
+          <input
+            type="text"
+            placeholder="Author"
+            class="border-2 rounded-lg w-full h-12 px-4 my-3"
+            name= "author"
           />
           <a href="/">
           <button
